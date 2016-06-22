@@ -22,6 +22,7 @@ done
 #iptables -I INPUT -p tcp -m connlimit --connlimit-above 50 -j REJECT
 #iptables -I INPUT -p udp -m connlimit --connlimit-above 50 -j REJECT
 #添加VPN防火墙策略
+#暂时停用VPN  @20160222
 #iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -j SNAT --to-source $public_ip 
 #如果月初则清空流量数据
 time_point=`date "+%d_%H%M"`
