@@ -4,8 +4,9 @@ source /home/admin/ss_config.cfg
 mysql -u$user -p$password $database -N -e "select port from $table" | while read port;do
 upload=`iptables -n -v -x -L -t filter|grep dpt|grep dpt:$port|awk -F' ' '{sum+=$2} END {print sum}'`
 download=`iptables -n -v -x -L -t filter|grep spt|grep spt:$port|awk -F' ' '{sum+=$2} END {print sum}'`
-echo "$port:$upload u"
-echo "$port:$download d"
+#comment out test statement
+#echo "$port:$upload u"
+#echo "$port:$download d"
 sql="update $table set upload=upload+$upload where port='$port'"
 mysql -u$user -p$password $database -N -e "$sql"
 sql="update $table set download=download+$download where port='$port'"
