@@ -11,5 +11,5 @@ mysql -u$user -p$password $database -N -e 'select port,ss_passwd from user where
 do 
 #echo "nohup /gopkg/bin/shadowsocks-server -p=\"$a\" -k=\"$b\" -m=\"table\" -t=60 >/dev/null & "
 #nohup /gopkg/bin/shadowsocks-server -p $a -k $b -m $method -t $timeout > /dev/null 2>&1 & 
-nohup ss-server -p $a -k $b -m $method -t $timeout >/dev/null 2>&1 &
+nohup ss-server -p $a -k $b -m $method -t $timeout -u --fast-open >/dev/null 2>&1 &
 done

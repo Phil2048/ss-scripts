@@ -7,9 +7,9 @@ download=`iptables -n -v -x -L -t filter|grep spt|grep spt:$port|awk -F' ' '{sum
 #comment out test statement
 #echo "$port:$upload u"
 #echo "$port:$download d"
-sql="update $table set upload=upload+$upload where port='$port'"
+sql="update $table set upload=upload+$upload*2 where port='$port'"
 mysql -u$user -p$password $database -N -e "$sql"
-sql="update $table set download=download+$download where port='$port'"
+sql="update $table set download=download+$download*2 where port='$port'"
 mysql -u$user -p$password $database -N -e "$sql"
 done
 #刷新防火墙
