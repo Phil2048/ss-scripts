@@ -1,1 +1,0 @@
-insert into IDAP_INFA.WKF_LIST(ETL_AREA,DIRECTORY_NAME,WORKFLOW_NAME) values ('','','');
