@@ -6,6 +6,7 @@ yum install -y git
 
 
 cd /opt
+rm -rf /opt/shadowsocks-libev
 git clone https://github.com/madeye/shadowsocks-libev.git
 cd /opt/shadowsocks-libev
 ./configure && make
