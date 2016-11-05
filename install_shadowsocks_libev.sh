@@ -1,6 +1,6 @@
 #!/bin/bash
 source /home/admin/ss_config.cfg
-yum install -y gcc automake autoconf libtool make build-essential autoconf libtool gcc
+yum install -y gcc automake autoconf libtool make build-essential autoconf libtool asciidoc xmlto
 yum install -y curl curl-devel zlib-devel openssl-devel perl perl-devel cpio expat-devel gettext-devel
 yum install -y git
 
