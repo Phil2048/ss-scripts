@@ -20,7 +20,7 @@ nohup ss-server -p $a -k $b -m $method -t $timeout -u -A --fast-open >/dev/null 
 #python
 #nohup ssserver -p $a -k $b -m $method -t $timeout --fast-open >/dev/null 2>&1 &
 done
-mysql -u$user -p$password $database -N -e 'select port,ss_passwd from user where active=1 and uname in ("397501170@qq.com")'|while read a b;
+mysql -u$user -p$password $database -N -e 'select port,ss_passwd from user where active=1 and uname in ("397501170@qq.com","likethisj")'|while read a b;
 do
 nohup ss-server -p $a -k $b -m $method -t $timeout -u --fast-open >/dev/null 2>&1 &
 done

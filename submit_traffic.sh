@@ -2,8 +2,8 @@
 source /home/admin/ss_config.cfg
 #将新一期的流量数值写入数据库
 mysql -u$user -p$password $database -N -e "select port from $table" | while read port;do
-#upload=`iptables -n -v -x -L -t filter|grep dpt|grep dpt:$port|awk -F' ' '{sum+=$2} END {print sum}'`
-upload=0
+upload=`iptables -n -v -x -L -t filter|grep dpt|grep dpt:$port|awk -F' ' '{sum+=$2} END {print sum}'`
+#upload=0
 download=`iptables -n -v -x -L -t filter|grep spt|grep spt:$port|awk -F' ' '{sum+=$2} END {print sum}'`
 #comment out test statement
 #echo "$port:$upload u"
@@ -16,9 +16,9 @@ done
 #刷新防火墙
 iptables -F
 mysql -u$user -p$password $database -N -e "select port from $table where active=1"|while read a; do 
-#iptables -A INPUT  -p tcp --dport $a;
+iptables -A INPUT  -p tcp --dport $a;
 iptables -A OUTPUT  -p tcp --sport $a;
-#iptables -A INPUT -p udp --dport $a;
+iptables -A INPUT -p udp --dport $a;
 iptables -A OUTPUT -p udp --sport $a;
 done
 #iptables -I INPUT -p tcp -m connlimit --connlimit-above 50 -j REJECT
@@ -31,5 +31,6 @@ time_point=`date "+%d_%H%M"`
 #time_point=01_0000
 #echo $time_point
 if [ "$time_point" == "01_0000" ];then
+mysql -u$user -p$password $database -N -e "insert into $database.$hist_table(dat_date,port,uname,upload,download) select date_format(date_add(curdate(),interval -1 month),'%Y%m'),port,uname,upload,download from $database.$table;"
 mysql -u$user -p$password $database -N -e "update $database.$table set upload=0,download=0"
 fi
