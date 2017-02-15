@@ -7,7 +7,7 @@ mysql -u$user -p$password $database -N -e 'update user set active=0 where utype=
 mysql -u$user -p$password $database -N -e 'update user set active=0 where utype=0 and curdate()>exp'
 mysql -u$user -p$password $database -N -e 'update user set active=1 where utype=1 and upload+download<transfer_limit'
 mysql -u$user -p$password $database -N -e 'update user set active=1 where utype=0 and curdate()<=exp'
-mysql -u$user -p$password $database -N -e 'select port,ss_passwd from user where active=1 and uname not in ("397501170@qq.com")'|while read a b;
+mysql -u$user -p$password $database -N -e 'select port,ss_passwd from user where active=1'|while read a b;
 do 
 #test
 #echo "nohup /gopkg/bin/shadowsocks-server -p=\"$a\" -k=\"$b\" -m=\"table\" -t=60 >/dev/null & "
@@ -16,12 +16,12 @@ do
 #nohup /gopkg/bin/shadowsocks-server -p $a -k $b -m $method -t $timeout > /dev/null 2>&1 & 
 #
 #libev
-nohup ss-server -p $a -k $b -m $method -t $timeout -u -A --fast-open >/dev/null 2>&1 &
+nohup ss-server -p $a -k $b -m $method -t $timeout -u --fast-open >/dev/null 2>&1 &
 #python
 #nohup ssserver -p $a -k $b -m $method -t $timeout --fast-open >/dev/null 2>&1 &
 done
-mysql -u$user -p$password $database -N -e 'select port,ss_passwd from user where active=1 and uname in ("397501170@qq.com","likethisj")'|while read a b;
-do
-nohup ss-server -p $a -k $b -m $method -t $timeout -u --fast-open >/dev/null 2>&1 &
-done
+#mysql -u$user -p$password $database -N -e 'select port,ss_passwd from user where active=1 and uname in ("397501170@qq.com","likethisj")'|while read a b;
+#do
+#nohup ss-server -p $a -k $b -m $method -t $timeout -u -v --fast-open >/tmp/log_ss_6443_8443.log 2>&1 &
+#done
 
