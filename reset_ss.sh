@@ -16,7 +16,7 @@ do
 #nohup /gopkg/bin/shadowsocks-server -p $a -k $b -m $method -t $timeout > /dev/null 2>&1 & 
 #
 #libev
-nohup ss-server -p $a -k $b -m $method -t $timeout -u --no-delay --fast-open >/dev/null 2>&1 &
+nohup ss-server -p $a -k $b -m $method -t $timeout $otherparam >/dev/null 2>&1 &
 #python
 #nohup ssserver -p $a -k $b -m $method -t $timeout --fast-open >/dev/null 2>&1 &
 done
