@@ -8,9 +8,9 @@ download=`iptables -n -v -x -L -t filter|grep spt|grep spt:$port|awk -F' ' '{sum
 #comment out test statement
 #echo "$port:$upload u"
 #echo "$port:$download d"
-sql="update $table set upload=upload+$upload where port='$port'"
+sql="update $table set upload=upload+$upload where port='$port' and source='$source'"
 mysql -u$user -p$password $database -N -e "$sql"
-sql="update $table set download=download+$download where port='$port'"
+sql="update $table set download=download+$download where port='$port' and source='$source'"
 mysql -u$user -p$password $database -N -e "$sql"
 done
 #刷新防火墙
@@ -31,6 +31,6 @@ time_point=`date "+%d_%H%M"`
 #time_point=01_0000
 #echo $time_point
 if [ "$time_point" == "01_0000" ];then
-mysql -u$user -p$password $database -N -e "insert into $database.$hist_table(dat_date,port,uname,upload,download) select date_format(date_add(curdate(),interval -1 month),'%Y%m'),port,uname,upload,download from $database.$table;"
+mysql -u$user -p$password $database -N -e "insert into $database.$hist_table(dat_date,port,uname,upload,download,source) select date_format(date_add(curdate(),interval -1 month),'%Y%m'),port,uname,upload,download,'$public_ip' from $database.$table;"
 mysql -u$user -p$password $database -N -e "update $database.$table set upload=0,download=0"
 fi
