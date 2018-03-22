@@ -14,6 +14,6 @@ git submodule update --init --recursive
 ./configure && make
 make install
 
-cd ${home}
-cp ./local.conf /etc/sysctl.d/local.conf
-sysctl --system
+#cd ${home}
+#cp ./local.conf /etc/sysctl.d/local.conf
+#sysctl --system

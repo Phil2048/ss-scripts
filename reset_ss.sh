@@ -17,11 +17,8 @@ do
 #
 #libev
 #nohup ss-server -p $a -k $b -m $method -t $timeout -u $otherparam >/dev/null 2>&1 &
+#
 #python
 nohup ssserver -p $a -k $b -m $method -t $timeout $otherparam >/dev/null 2>&1 &
 done
-#mysql -u$user -p$password $database -N -e 'select port,ss_passwd from user where active=1 and uname in ("397501170@qq.com","likethisj")'|while read a b;
-#do
-#nohup ss-server -p $a -k $b -m $method -t $timeout -u -v --fast-open >/tmp/log_ss_6443_8443.log 2>&1 &
-#done
 

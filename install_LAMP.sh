@@ -7,4 +7,4 @@ chkconfig httpd on
 service mariadb start
 chkconfig mariadb on
 cd /var/www/html
-git clone git@github.com:yb3712590/ss-manager.git /var/www/html/ssmanager
+git clone https://github.com/yb3712590/ss-manager.git /var/www/html/ssmanager
