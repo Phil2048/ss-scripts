@@ -1,5 +1,5 @@
 #!/bin/bash
-source /home/admin/ss_config.cfg
+source ./ss_config.cfg
 sql="select port,ss_passwd from user where uname='$1'"
 mysql -u$user -p$password $database -N -e 'update user set active=0 where utype=1 and upload+download>transfer_limit'
 mysql -u$user -p$password $database -N -e 'update user set active=0 where utype=0 and curdate()>exp'

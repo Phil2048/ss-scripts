@@ -1,6 +1,6 @@
 #!/bin/bash
-source /home/admin/ss_config.cfg
-yum install -y gcc automake autoconf libtool make build-essential libtool asciidoc xmlto
+source ./ss_config.cfg
+yum install -y gcc automake autoconf mesa-libEGL-devel libtool make build-essential libtool asciidoc xmlto
 yum install -y curl curl-devel zlib-devel openssl-devel perl perl-devel cpio expat-devel gettext-devel
 yum install -y git udns udns-devel libev-devel mbedtls mbedtls-devel libsodium libsodium-devel pcre-devel asciidoc c-ares-devel
 

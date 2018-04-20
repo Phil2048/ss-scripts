@@ -1,5 +1,5 @@
 #!/bin/bash
-source /home/admin/ss_config.cfg
+source ./ss_config.cfg
 killall ss-server 2>/dev/zero
 killall ssserver 2>/dev/zero
 killall shadowsocks-server 2>/dev/zero

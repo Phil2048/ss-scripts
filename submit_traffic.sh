@@ -1,5 +1,5 @@
 #!/bin/bash
-source /home/admin/ss_config.cfg
+source ./ss_config.cfg
 #将新一期的流量数值写入数据库
 mysql -u$user -p$password $database -N -e "select port from $table" | while read port;do
 upload=`iptables -n -v -x -L -t filter|grep dpt|grep dpt:$port|awk -F' ' '{sum+=$2} END {print sum}'`
@@ -22,17 +22,17 @@ iptables -A INPUT -p udp --dport $a;
 iptables -A OUTPUT -p udp --sport $a;
 done
 #屏蔽阿里云盾
-iptables -I INPUT -s 140.205.201.0/28 -j DROP
-iptables -I INPUT -s 140.205.201.16/29 -j DROP
-iptables -I INPUT -s 140.205.201.32/28 -j DROP
-iptables -I INPUT -s 140.205.225.192/29 -j DROP
-iptables -I INPUT -s 140.205.225.200/30 -j DROP
-iptables -I INPUT -s 140.205.225.184/29 -j DROP
-iptables -I INPUT -s 140.205.225.183/32 -j DROP
-iptables -I INPUT -s 140.205.225.206/32 -j DROP
-iptables -I INPUT -s 140.205.225.205/32 -j DROP
-iptables -I INPUT -s 140.205.225.195/32 -j DROP
-iptables -I INPUT -s 140.205.225.204/32 -j DROP
+#iptables -I INPUT -s 140.205.201.0/28 -j DROP
+#iptables -I INPUT -s 140.205.201.16/29 -j DROP
+#iptables -I INPUT -s 140.205.201.32/28 -j DROP
+#iptables -I INPUT -s 140.205.225.192/29 -j DROP
+#iptables -I INPUT -s 140.205.225.200/30 -j DROP
+#iptables -I INPUT -s 140.205.225.184/29 -j DROP
+#iptables -I INPUT -s 140.205.225.183/32 -j DROP
+#iptables -I INPUT -s 140.205.225.206/32 -j DROP
+#iptables -I INPUT -s 140.205.225.205/32 -j DROP
+#iptables -I INPUT -s 140.205.225.195/32 -j DROP
+#iptables -I INPUT -s 140.205.225.204/32 -j DROP
 #iptables -I INPUT -p tcp -m connlimit --connlimit-above 50 -j REJECT
 #iptables -I INPUT -p udp -m connlimit --connlimit-above 50 -j REJECT
 #添加VPN防火墙策略

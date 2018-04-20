@@ -5,6 +5,7 @@
 #pip install  shadowsocks
 
 yum install -y unzip python python-devel python-setuptools openssl openssl-devel curl wget unzip gcc automake autoconf make libtool
+yum install -y git udns udns-devel libev-devel mbedtls mbedtls-devel libsodium libsodium-devel pcre-devel asciidoc c-ares-devel
 cd /tmp
 wget --no-check-certificate -O shadowsocks-master.zip https://github.com/shadowsocks/shadowsocks/archive/master.zip
 unzip -q shadowsocks-master.zip

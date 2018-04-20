@@ -1,5 +1,5 @@
 #!/bin/bash
-source /home/admin/ss_config.cfg
+source ./ss_config.cfg
 #echo "-----------------------进站流量-----------------------"
 #iptables -n -v -L -t filter|grep dpt:
 #echo 
