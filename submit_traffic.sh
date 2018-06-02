@@ -1,5 +1,6 @@
 #!/bin/bash
-source ./ss_config.cfg
+SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
+source $SHELL_FOLDER/ss_config.cfg
 #将新一期的流量数值写入数据库
 mysql -u$user -p$password $database -N -e "select port from $table" | while read port;do
 upload=`iptables -n -v -x -L -t filter|grep dpt|grep dpt:$port|awk -F' ' '{sum+=$2} END {print sum}'`
