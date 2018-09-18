@@ -40,9 +40,9 @@ done
 #暂时停用VPN  @20160222
 #iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -j SNAT --to-source $public_ip 
 #屏蔽PSN
-iptables -A OUTPUT -m string --string "playstation.com" --algo bm --to 65535 -j DROP
-iptables -A OUTPUT -m string --string "playstation.net" --algo bm --to 65535 -j DROP
-iptables -A OUTPUT -m string --string "sonyentertainmentnetwork.com" --algo bm --to 65535 -j DROP
+#iptables -A OUTPUT -m string --string "playstation.com" --algo bm --to 65535 -j DROP
+#iptables -A OUTPUT -m string --string "playstation.net" --algo bm --to 65535 -j DROP
+#iptables -A OUTPUT -m string --string "sonyentertainmentnetwork.com" --algo bm --to 65535 -j DROP
 #如果月初则清空流量数据
 time_point=`date "+%d_%H%M"`
 #time_point=01_0000

@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/admin
+#cd /home/admin
 tar -xzvf DenyHosts-2.6.tar.gz
 cd DenyHosts-2.6
 python setup.py install
