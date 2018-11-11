@@ -1,5 +1,5 @@
 #!/bin/bash
-yum install -y mercurial git gcc wget psmisc
+#yum install -y mercurial git gcc wget psmisc
 mkdir /go
 cd /go
 wget https://dl.google.com/go/go1.11.1.linux-amd64.tar.gz
