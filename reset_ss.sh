@@ -14,10 +14,10 @@ do
 #echo "nohup /gopkg/bin/shadowsocks-server -p=\"$a\" -k=\"$b\" -m=\"table\" -t=60 >/dev/null & "
 #
 #golang
-nohup /gopkg/bin/go-shadowsocks2 -s "ss://AEAD_CHACHA20_POLY1305:$b@:$a" > /dev/null 2>&1 & 
+#nohup /gopkg/bin/go-shadowsocks2 -s "ss://AEAD_CHACHA20_POLY1305:$b@:$a" > /dev/null 2>&1 & 
 #
 #libev
-#nohup ss-server -p $a -k $b -m $method -t $timeout -u $otherparam >/dev/null 2>&1 &
+nohup ss-server -p $a -k $b -m $method -t $timeout -u $otherparam >/dev/null 2>&1 &
 #
 #python
 #nohup ssserver -p $a -k $b -m $method -t $timeout $otherparam >/dev/null 2>&1 &

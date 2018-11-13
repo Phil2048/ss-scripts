@@ -8,6 +8,6 @@ yum install -y epel-release yum-utils
 yum-config-manager --enable epel
 yum install -y git httpd mariadb-server mariadb php php-mysql
 yum install -y gcc psmisc automake autoconf mesa-libEGL-devel libtool make build-essential libtool asciidoc xmlto libffi-devel
-yum install -y vim curl curl-devel zlib-devel openssl-devel perl perl-devel cpio expat-devel gettext-devel mercurial
+yum install -y vim curl curl-devel zlib-devel openssl-devel perl perl-devel cpio expat-devel gettext-devel mercurial readline-devel
 yum install -y udns udns-devel libev-devel mbedtls mbedtls-devel libsodium libsodium-devel pcre-devel asciidoc c-ares-devel
 yum install -y unzip python python-devel python-setuptools openssl openssl-devel wget unzip automake autoconf make libtool
