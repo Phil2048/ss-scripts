@@ -1,7 +1,7 @@
 rpm -Uvh https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 find /etc/yum.repos.d/ -name 'Cen*.repo' -exec mv {} {}.bak \;
-rpm -Uvh --force http://mirror.centos.org/centos/7/os/x86_64/Packages/centos-release-7-5.1804.el7.centos.x86_64.rpm
+rpm -Uvh --force http://mirror.centos.org/centos/7/os/x86_64/Packages/centos-release-7-6.1810.2.el7.centos.x86_64.rpm
 yum clean all
 yum makecache fast
 yum install -y epel-release yum-utils
