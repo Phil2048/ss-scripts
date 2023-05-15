@@ -1,1 +1,7 @@
+#websites that block hk traffic
 
+KEYWORD,google
+KEYWORD,imgur
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,ai.com
