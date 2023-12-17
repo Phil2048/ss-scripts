@@ -2,9 +2,6 @@
 
 DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,imgur
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,pypi.org
 DOMAIN-SUFFIX,hostloc.com
 DOMAIN-SUFFIX,v2ex.com
